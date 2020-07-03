@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name" translatable="false">Storage App</string>
+
+    <string name="apply_image_uri">Apply image URI</string>
+
+    <string name="delete_product">Delete Product</string>
+
+    <string name="exception_decoding_stream" translatable="false">An exception occurred while trying to decode a stream.</string>
+    <string name="exception_downloads_directory" translatable="false">An exception occurred while trying to access the download directory.</string>
+    <string name="exception_getting_location" translatable="false">An exception occurred while trying to get a location.</string>
+    <string name="exception_implement" translatable="false">%1$s must implement %2$s</string>
+    <string name="exception_parsing_data" translatable="false">An exception occurred while trying to parse data.</string>
+    <string name="exception_reading_document" translatable="false">An exception occurred while trying to read a document.</string>
+    <string name="exception_reading_stream" translatable="false">An exception occurred while trying to read a stream.</string>
+    <string name="exception_saving_picture" translatable="false">An exception occurred while trying to save a picture.</string>
+
+    <string name="export_data">Export Data</string>
+
+    <string name="fastfood_dsc">Icon for open store products</string>
+
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+
+    <string name="image_product_desc">Image of the product.</string>
+    <string name="image_uri">Image URI (insert a web link or click on an image to open the gallery):</string>
+
+    <string name="import_data">Import Data</string>
+
+    <string name="insert_image">Insert Image</string>
+
+    <string name="invalid_data">Invalid data!</string>
+
+    <string name="no">No</string>
+
+    <string name="open_gallery">Open Gallery</string>
+
+    <string name="product_image_is_blank">Please set product image!</string>
+    <string name="product_name">Product Name:</string>
+    <string name="product_name_is_blank">Product name can\'t be blank!</string>
+    <string name="product_price" translatable="false">%1$s₽</string>
+    <string name="product_price_holder" translatable="false">99.99₽</string>
+    <string name="product_price_is_blank">Product price can\'t be blank!</string>
+    <string name="product_price_is_zero">Product price must be more then zero!</string>
+    <string name="product_price_label">Product price:</string>
+    <string name="product_store_is_empty">Pick a store!</string>
+
+    <string name="search">Search</string>
+    <string name="search_hint">Search product by name</string>
+
+    <string name="spinner_add">Add new store…</string>
+    <string name="spinner_pick">Pick a store…</string>
+
+    <string name="store_address">Store address:</string>
+    <string name="store_address_is_blank">Store address can\'t be blank!</string>
+    <string name="store_address_is_empty">Store address is empty!</string>
+    <string name="store_coordinates" translatable="false">(%1$f, %2$f)</string>
+    <string name="store_label">Store:</string>
+    <string name="store_name">Store name:</string>
+    <string name="store_name_is_blank">Store name can\'t be blank!</string>
+
+    <string name="tap_to_search_location">Tap to search location</string>
+
+    <string name="title_activity_maps">Map</string>
+    <string name="title_product">Product</string>
+    <string name="title_products">Products</string>
+    <string name="title_store">Store</string>
+    <string name="title_stores">Stores</string>
+
+    <string name="unsupported_file">Unsupported file!</string>
+
+    <string name="warning_close">Page will be closed. Discard changes?</string>
+    <string name="warning_delete_product">Delete this product?</string>
+    <string name="warning_delete_store">Delete this store with all contained products?</string>
+
+    <string name="yes">Yes</string>
+</resources>

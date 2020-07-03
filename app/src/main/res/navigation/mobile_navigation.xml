@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_products">
+
+    <fragment
+        android:id="@+id/navigation_products"
+        android:name="ru.musintimur.storageapp.ui.products.ProductsFragment"
+        android:label="@string/title_products"
+        tools:layout="@layout/fragment_products">
+
+        <argument
+            android:name="argMode"
+            android:defaultValue="ALL_PRODUCTS"
+            app:argType="ru.musintimur.storageapp.ui.products.ProductsMode" />
+
+        <argument
+            android:name="argStoreUuid"
+            android:defaultValue=" "
+            app:argType="string" />
+
+        <argument
+            android:name="argName"
+            android:defaultValue=" "
+            app:argType="string" />
+
+        <action
+            android:id="@+id/actionProductsToProduct"
+            app:destination="@+id/navigation_product" />
+
+        <action
+            android:id="@+id/actionProductsSearch"
+            app:destination="@+id/navigation_products" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_product"
+        android:name="ru.musintimur.storageapp.ui.product.ProductFragment"
+        android:label="@string/title_product"
+        tools:layout="@layout/fragment_product">
+
+        <argument
+            android:name="argProduct"
+            android:defaultValue="@null"
+            app:argType="ru.musintimur.storageapp.model.room.product.Product"
+            app:nullable="true" />
+
+        <action
+            android:id="@+id/actionProductToStore"
+            app:destination="@id/navigation_store" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_stores"
+        android:name="ru.musintimur.storageapp.ui.stores.StoresFragment"
+        android:label="@string/title_stores"
+        tools:layout="@layout/fragment_stores">
+
+        <action
+            android:id="@+id/actionStoresToStore"
+            app:destination="@id/navigation_store" />
+
+        <action
+            android:id="@+id/actionStoresToProducts"
+            app:destination="@+id/navigation_products" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_store"
+        android:name="ru.musintimur.storageapp.ui.store.StoreFragment"
+        android:label="@string/title_store"
+        tools:layout="@layout/fragment_product">
+
+        <argument
+            android:name="argStore"
+            android:defaultValue="@null"
+            app:argType="ru.musintimur.storageapp.model.room.stores.Store"
+            app:nullable="true" />
+
+    </fragment>
+
+
+</navigation>

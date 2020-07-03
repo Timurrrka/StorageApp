@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.store.StoreFragment">
+
+    <TextView
+        android:id="@+id/textViewLabelStoreName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:labelFor="@id/editTextStoreName"
+        android:text="@string/store_name"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextStoreName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="textCapWords"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textViewLabelStoreName"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLabelStoreName" />
+
+    <TextView
+        android:id="@+id/textViewLabelStoreAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:labelFor="@id/editTextStoreAddress"
+        android:text="@string/store_address"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/editTextStoreName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextStoreName" />
+
+    <EditText
+        android:id="@+id/editTextStoreAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="textPostalAddress|textCapWords"
+        app:layout_constraintEnd_toStartOf="@+id/buttonFindAddress"
+        app:layout_constraintStart_toStartOf="@+id/textViewLabelStoreAddress"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLabelStoreAddress" />
+
+    <ImageView
+        android:id="@+id/buttonFindAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/tap_to_search_location"
+        android:src="@android:drawable/ic_menu_mylocation"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextStoreAddress"
+        app:layout_constraintEnd_toEndOf="@+id/editTextStoreName"
+        app:layout_constraintTop_toTopOf="@+id/editTextStoreAddress" />
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapViewStore"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/buttonFindAddress"
+        app:layout_constraintStart_toStartOf="@+id/editTextStoreAddress"
+        app:layout_constraintTop_toBottomOf="@+id/editTextStoreAddress" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabSaveStore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@android:drawable/ic_menu_save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

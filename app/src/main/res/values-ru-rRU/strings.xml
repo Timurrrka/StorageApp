@@ -1,0 +1,59 @@
+<resources>
+    <string name="apply_image_uri">Подтвердить URI изображения</string>
+
+    <string name="delete_product">Удалить товар</string>
+
+    <string name="export_data">Экспорт</string>
+
+    <string name="fastfood_dsc">Иконка отображения товаров магазина</string>
+
+    <string name="image_product_desc">Изображение товара.</string>
+    <string name="image_uri">Изображение товара (вставьте веб-ссылку или нажмите на изображение для открытия галереи):</string>
+
+    <string name="import_data">Импорт</string>
+
+    <string name="insert_image">Вставить изображение</string>
+
+    <string name="invalid_data">Неподдеживаемые данные!</string>
+
+    <string name="no">Нет</string>
+
+    <string name="open_gallery">Открыть галерею</string>
+
+    <string name="product_image_is_blank">Пожалуйста, укажите изображение!</string>
+    <string name="product_name">Наименование товара:</string>
+    <string name="product_name_is_blank">Наименование товара не должно быть пустым!</string>
+    <string name="product_price_is_blank">Цена товара не должна быть пустой!</string>
+    <string name="product_price_is_zero">Цена на товар должна быть больше нуля!</string>
+    <string name="product_price_label">Цена товара:</string>
+    <string name="product_store_is_empty">Выберете магазин:</string>
+
+    <string name="search">Поиск</string>
+    <string name="search_hint">Поиск товаров по наименованию</string>
+
+    <string name="spinner_add">Добавить новый магазин…</string>
+    <string name="spinner_pick">Выбрать магазин…</string>
+
+    <string name="store_address">Адрес магазина:</string>
+    <string name="store_address_is_blank">Адрес магазина не должен быть пустым!</string>
+    <string name="store_address_is_empty">Адрес пуст!</string>
+    <string name="store_label">Магазин:</string>
+    <string name="store_name">Название магазина:</string>
+    <string name="store_name_is_blank">Название магазина не должно быть пустым!</string>
+
+    <string name="tap_to_search_location">Нажмите для поиска местоположения</string>
+
+    <string name="title_activity_maps">Карта</string>
+    <string name="title_product">Товар</string>
+    <string name="title_products">Товары</string>
+    <string name="title_store">Магазин</string>
+    <string name="title_stores">Магазины</string>
+
+    <string name="unsupported_file">Неподдерживаемый файл!</string>
+
+    <string name="warning_close">Страница будет закрыта. Отказаться от изменений?</string>
+    <string name="warning_delete_product">Удалить товар?</string>
+    <string name="warning_delete_store">Удалить магазин со всеми относящимися к нему товарами?</string>
+
+    <string name="yes">Да</string>
+</resources>

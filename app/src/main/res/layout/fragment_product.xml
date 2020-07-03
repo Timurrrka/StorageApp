@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.product.ProductFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textViewLabelProductName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:labelFor="@id/editTextProductName"
+                android:text="@string/product_name"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editTextProductName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="textCapWords"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textViewLabelProductName"
+                app:layout_constraintTop_toBottomOf="@+id/textViewLabelProductName" />
+
+            <TextView
+                android:id="@+id/textViewLabelProductPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/editTextProductPrice"
+                android:text="@string/product_price_label"
+                android:textSize="18sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/editTextProductPrice"
+                app:layout_constraintStart_toStartOf="@+id/textViewLabelProductName" />
+
+            <EditText
+                android:id="@+id/editTextProductPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:selectAllOnFocus="true"
+                app:layout_constraintEnd_toEndOf="@+id/editTextProductName"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/textViewLabelProductPrice"
+                app:layout_constraintTop_toBottomOf="@+id/editTextProductName" />
+
+            <TextView
+                android:id="@+id/textViewLabelProductStore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/spinnerProductStore"
+                android:text="@string/store_label"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/spinnerProductStore"
+                app:layout_constraintStart_toStartOf="@+id/textViewLabelProductPrice"
+                app:layout_constraintTop_toTopOf="@+id/spinnerProductStore" />
+
+            <Spinner
+                android:id="@+id/spinnerProductStore"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/editTextProductName"
+                app:layout_constraintStart_toEndOf="@+id/textViewLabelProductStore"
+                app:layout_constraintTop_toBottomOf="@+id/editTextProductPrice" />
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapViewProductStore"
+                android:name="com.google.android.gms.maps.MapFragment"
+                android:layout_width="0dp"
+                android:layout_height="250dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/editTextProductName"
+                app:layout_constraintStart_toStartOf="@+id/textViewLabelProductStore"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerProductStore" />
+
+            <TextView
+                android:id="@+id/textViewLabelImageUrl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:labelFor="@id/editTextImageUrl"
+                android:text="@string/image_uri"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/editTextProductName"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textViewLabelProductName"
+                app:layout_constraintTop_toBottomOf="@+id/mapViewProductStore" />
+
+            <EditText
+                android:id="@+id/editTextImageUrl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="textUri"
+                app:layout_constraintEnd_toStartOf="@+id/imageButtonApplyLink"
+                app:layout_constraintStart_toStartOf="@+id/textViewLabelImageUrl"
+                app:layout_constraintTop_toBottomOf="@+id/textViewLabelImageUrl" />
+
+            <ImageView
+                android:id="@+id/imageViewProductImage"
+                android:layout_width="wrap_content"
+                android:layout_height="250dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/insert_image"
+                android:src="@drawable/ic_insert_photo_black_24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextImageUrl" />
+
+            <ImageView
+                android:id="@+id/imageButtonApplyLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/apply_image_uri"
+                android:src="@android:drawable/ic_menu_send"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextImageUrl"
+                app:layout_constraintEnd_toEndOf="@+id/textViewLabelImageUrl"
+                app:layout_constraintTop_toTopOf="@+id/editTextImageUrl" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabSaveProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@android:drawable/ic_menu_save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

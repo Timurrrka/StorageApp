@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/itemSearch"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="@string/search"
+        android:visible="false"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/appBarSearch"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="@string/search"
+        android:visible="false"
+        app:actionViewClass="android.widget.SearchView"
+        app:iconifiedByDefault="false"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/itemDelete"
+        android:icon="@drawable/ic_delete_black_24dp"
+        android:title="@string/delete_product"
+        android:visible="false"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/itemExport"
+        android:icon="@drawable/ic_get_app_black_24dp"
+        android:title="@string/export_data"
+        android:visible="false"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/itemImport"
+        android:icon="@drawable/ic_input_black_24dp"
+        android:title="@string/import_data"
+        android:visible="false"
+        app:showAsAction="never" />
+</menu>
