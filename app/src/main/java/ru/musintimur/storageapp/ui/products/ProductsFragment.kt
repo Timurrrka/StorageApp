@@ -36,6 +36,7 @@ class ProductsFragment : Fragment() {
     private lateinit var listener: FragmentListener
     private lateinit var productsViewModel: ProductsViewModel
     private lateinit var productsAdapter: RecyclerViewProductsAdapter
+    private lateinit var layoutManager: StaggeredGridLayoutManager
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -67,8 +68,8 @@ class ProductsFragment : Fragment() {
             ViewModelProvider(this, ProductsViewModelFactory(requireActivity().application, fragmentMode, storeUuid, productSearchName))
                 .get(ProductsViewModel::class.java)
         productsAdapter = RecyclerViewProductsAdapter()
-        recyclerViewProducts.layoutManager =
-                StaggeredGridLayoutManager(listener.getRecyclerViewColumnCount(400F), StaggeredGridLayoutManager.VERTICAL)
+        layoutManager = StaggeredGridLayoutManager(listener.getRecyclerViewColumnCount(400F), StaggeredGridLayoutManager.VERTICAL)
+        recyclerViewProducts.layoutManager = layoutManager
         recyclerViewProducts.adapter = productsAdapter
 
         setupObservers()
@@ -77,8 +78,14 @@ class ProductsFragment : Fragment() {
         productsAdapter.onItemClick = { product -> openProductEditor(product) }
     }
 
+    override fun onPause() {
+        super.onPause()
+        productsViewModel.saveLayoutManagerState(layoutManager.onSaveInstanceState())
+    }
+
     override fun onResume() {
         super.onResume()
+        listener.setProgressBarVisibility(FragmentListener.Visibility.VISIBLE)
         listener.setBottomNavigationVisibility(FragmentListener.Visibility.VISIBLE)
         listener.setOnSearchItemClick { productName -> openFoundedProducts(productName) }
         listener.setOnExportItemClick { productsViewModel.exportRepository() }
@@ -104,6 +111,10 @@ class ProductsFragment : Fragment() {
                     productsViewModel.refreshContent()
                     listener.setProgressBarVisibility(FragmentListener.Visibility.HIDDEN)
                 }
+            })
+            getLayoutManagerState().observe(owner, Observer {
+                recyclerViewProducts.layoutManager?.onRestoreInstanceState(it)
+                listener.setProgressBarVisibility(FragmentListener.Visibility.HIDDEN)
             })
         }
     }

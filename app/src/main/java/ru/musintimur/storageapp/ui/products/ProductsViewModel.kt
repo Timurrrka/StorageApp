@@ -1,6 +1,7 @@
 package ru.musintimur.storageapp.ui.products
 
 import android.app.Application
+import android.os.Parcelable
 import android.widget.Toast
 import androidx.lifecycle.*
 import androidx.paging.DataSource
@@ -8,6 +9,7 @@ import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.google.gson.Gson
 import kotlinx.coroutines.async
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import ru.musintimur.storageapp.app.*
 import ru.musintimur.storageapp.model.room.ExchangeSchema
@@ -39,11 +41,14 @@ class ProductsViewModel(
     private val _jsonData = MutableLiveData<String>()
     private val _exchangeSchema = MutableLiveData<ExchangeSchema?>()
     private val _isImported = MutableLiveData<Boolean>(false)
+    private val _layoutManagerState = MutableLiveData<Parcelable?>()
+    private var layoutManagerState: Parcelable? = null
 
     fun getPagedProducts(): LiveData<PagedList<Product>> = _pagedProducts
     fun getJsonData(): LiveData<String> = _jsonData
     fun getExchangeSchema(): LiveData<ExchangeSchema?> = _exchangeSchema
     fun isImported(): LiveData<Boolean> = _isImported
+    fun getLayoutManagerState(): LiveData<Parcelable?> = _layoutManagerState
 
     private fun getPagedListBuilder(config: PagedList.Config):
             LivePagedListBuilder<Int, Product> {
@@ -55,9 +60,17 @@ class ProductsViewModel(
         return LivePagedListBuilder(dataSourceFactory, config)
     }
 
-    fun refreshContent() {
+    fun saveLayoutManagerState(parcelable: Parcelable?) {
+        layoutManagerState = parcelable
+    }
+
+    fun refreshContent() = viewModelScope.launch {
+        val state = layoutManagerState
         _pagedProducts.value?.dataSource?.invalidate()
         _isImported.postValue(false)
+        delay(500)
+        _layoutManagerState.postValue(state)
+        layoutManagerState = null
     }
 
     fun exportRepository() {
